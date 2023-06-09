@@ -38,7 +38,7 @@ dependencies:
   dio:
   hive:
   hive_flutter:
-  bloc:
+  flutter_bloc:
 
 dev_dependencies:
   flutter_lints: ^2.0.0
