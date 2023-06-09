@@ -2,22 +2,22 @@ import '../../../domain/entities/book_entity.dart';
 
 abstract class FeaturedBooksStates {}
 
-class InitialBooksStates extends FeaturedBooksStates {}
+class InitialFeaturedBooksState extends FeaturedBooksStates {}
 
-class LoadingBooksStates extends FeaturedBooksStates {}
+class LoadingFeaturedBooksState extends FeaturedBooksStates {}
 
-class SuccessBooksStates extends FeaturedBooksStates {
+class SuccessFeaturedBooksState extends FeaturedBooksStates {
   final List<BookEntity> books;
 
-  SuccessBooksStates({
+  SuccessFeaturedBooksState({
     required this.books,
   });
 }
 
-class ErrorBooksStates extends FeaturedBooksStates {
+class ErrorFeaturedBooksState extends FeaturedBooksStates {
   final String errorMessage;
 
-  ErrorBooksStates({
+  ErrorFeaturedBooksState({
     required this.errorMessage,
   });
 }
