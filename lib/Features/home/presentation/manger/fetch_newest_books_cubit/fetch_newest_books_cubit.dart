@@ -3,8 +3,8 @@ import 'package:bookly/Features/home/domain/use_cases/fetch_newest_books_use_cas
 
 import 'fetch_newest_books_states.dart';
 
-class FeaturedBooksCubit extends Cubit<NewestBooksStates> {
-  FeaturedBooksCubit(
+class NewestBooksCubit extends Cubit<NewestBooksStates> {
+  NewestBooksCubit(
     this.fetchNewestBooksUseCase,
   ) : super(
           InitialNewestBooksState(),
