@@ -15,15 +15,14 @@ import 'core/utils/methods/service_locator.dart';
 import 'core/utils/simple_bloc_observer.dart';
 
 void main() async {
-  Hive.initFlutter();
+  serviceLocator();
+  await Hive.initFlutter();
   Hive.registerAdapter(BookEntityAdapter());
   await Hive.openBox<BookEntity>(kFeaturedBox);
   await Hive.openBox<BookEntity>(kNewestBox);
   Bloc.observer = SimpleBlocObserver();
   runApp(const Bookly());
 }
-
-
 
 class Bookly extends StatelessWidget {
   const Bookly({Key? key}) : super(key: key);
@@ -38,7 +37,7 @@ class Bookly extends StatelessWidget {
               FetchFeaturedBooksUseCase(
                 getIt.get<HomeRepoImpl>(),
               ),
-            );
+            )..fetchFeaturedBooks();
           },
         ),
         BlocProvider(
@@ -47,7 +46,7 @@ class Bookly extends StatelessWidget {
               FetchNewestBooksUseCase(
                 getIt.get<HomeRepoImpl>(),
               ),
-            );
+            )..fetchNewestBooks();
           },
         ),
       ],

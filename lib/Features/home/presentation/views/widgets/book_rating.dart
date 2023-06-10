@@ -4,9 +4,12 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../../../../../core/utils/styles.dart';
 
 class BookRating extends StatelessWidget {
+  final String bookRating;
+
   const BookRating({
     super.key,
     this.mainAxisAlignment = MainAxisAlignment.start,
+    required this.bookRating,
   });
 
   final MainAxisAlignment mainAxisAlignment;
@@ -23,22 +26,10 @@ class BookRating extends StatelessWidget {
         const SizedBox(
           width: 6.3,
         ),
-        const Text(
-          '4.8',
+        Text(
+          bookRating,
           style: Styles.textStyle16,
         ),
-        const SizedBox(
-          width: 5,
-        ),
-        Opacity(
-          opacity: .5,
-          child: Text(
-            '(245)',
-            style: Styles.textStyle14.copyWith(
-              fontWeight: FontWeight.w600,
-            ),
-          ),
-        )
       ],
     );
   }
