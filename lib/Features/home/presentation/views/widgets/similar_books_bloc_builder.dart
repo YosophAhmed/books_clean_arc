@@ -1,3 +1,4 @@
+import 'package:bookly/Features/home/presentation/views/widgets/featured_books_loading_indicator.dart';
 import 'package:bookly/Features/home/presentation/views/widgets/similar_books_list_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -23,9 +24,7 @@ class SimilarBooksBlocBuilder extends StatelessWidget {
             ),
           );
         } else {
-          return const Center(
-            child: CircularProgressIndicator(),
-          );
+          return const FeaturedBooksLoadingIndicator();
         }
       },
     );

@@ -6,6 +6,8 @@ class InitialNewestBooksState extends NewestBooksStates {}
 
 class LoadingNewestBooksState extends NewestBooksStates {}
 
+class PaginationLoadingNewestBooksState extends NewestBooksStates {}
+
 class SuccessNewestBooksState extends NewestBooksStates {
   final List<BookEntity> books;
 
